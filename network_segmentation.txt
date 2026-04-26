@@ -1,0 +1,43 @@
+ZERO TRUST NETWORK SEGMENTATION DETAILS
+
+Network Zones
+
+1. Admin Network
+IP Range: 192.168.1.0/24
+Purpose: System administrators and IT management
+
+Permissions:
+- Full access to servers
+- Full access to network devices
+- Remote management allowed
+
+---------------------------------------
+
+2. User Network
+
+IP Range: 192.168.2.0/24
+Purpose: Employees and regular users
+
+Permissions:
+- Access to internal applications
+- Internet access
+- No administrative privileges
+
+Restrictions:
+- Cannot access admin network
+- Cannot modify system settings
+
+---------------------------------------
+
+3. Guest Network
+
+IP Range: 192.168.3.0/24
+Purpose: Visitors and external devices
+
+Permissions:
+- Internet access only
+
+Restrictions:
+- No access to internal network
+- No access to servers
+- No access to admin systems
