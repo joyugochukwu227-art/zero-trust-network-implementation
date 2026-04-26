@@ -1,0 +1,53 @@
+ZERO TRUST FIREWALL CONFIGURATION
+
+Default Policy
+
+DENY ALL
+
+
+Allow Admin Access
+
+ALLOW
+Source: 192.168.1.0/24
+Destination: ALL
+Protocol: ALL
+
+
+Allow User Internet Access
+
+ALLOW
+Source: 192.168.2.0/24
+Destination: Internet
+Protocol: HTTP, HTTPS
+
+Allow Guest Internet Only
+
+ALLOW
+Source: 192.168.3.0/24
+Destination: Internet
+Protocol: HTTP, HTTP
+
+
+Block Guest to Internal Network
+
+DENY
+Source: 192.168.3.0/24
+Destination: 192.168.1.0/24
+
+DENY
+Source: 192.168.3.0/24
+Destination: 192.168.2.0/24
+
+
+Block User to Admin Network
+
+DENY
+Source: 192.168.2.0/24
+Destination: 192.168.1.0/24
+
+-
+
+Logging
+
+ENABLE LOGGING
+All access attempts recorded
